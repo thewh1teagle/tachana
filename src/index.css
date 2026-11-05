@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  color-scheme: light;
+  --background: #faf9f6;
+  --foreground: #1c1b18;
+  --card: #ffffff;
+  --card-foreground: #1c1b18;
+  --popover: #ffffff;
+  --popover-foreground: #1c1b18;
+  --primary: #1c1b18;
+  --primary-foreground: #faf9f6;
+  --secondary: #f2f0ea;
+  --secondary-foreground: #1c1b18;
+  --muted: #f2f0ea;
+  --muted-foreground: #6f6c64;
+  --accent: #f2f0ea;
+  --accent-foreground: #1c1b18;
+  --destructive: #b3402e;
+  --border: #e8e5dd;
+  --input: #e8e5dd;
+  --ring: #1c1b18;
+  --live: #2f7d5b;
+  --faint: #8d897f;
+  --radius: 0.75rem;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #161513;
+  --foreground: #f1efe9;
+  --card: #1e1d1a;
+  --card-foreground: #f1efe9;
+  --popover: #1e1d1a;
+  --popover-foreground: #f1efe9;
+  --primary: #f1efe9;
+  --primary-foreground: #161513;
+  --secondary: #25241f;
+  --secondary-foreground: #f1efe9;
+  --muted: #25241f;
+  --muted-foreground: #a09c92;
+  --accent: #25241f;
+  --accent-foreground: #f1efe9;
+  --destructive: #ec8b79;
+  --border: #2e2c28;
+  --input: #2e2c28;
+  --ring: #f1efe9;
+  --live: #5fc096;
+  --faint: #827e74;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-live: var(--live);
+  --color-faint: var(--faint);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Hebrew", Arial, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
