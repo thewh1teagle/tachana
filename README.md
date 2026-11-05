@@ -13,12 +13,8 @@ pnpm dev
 
 ## Deploy
 
-```sh
-pnpm deploy
-```
-
-Cloudflare Workers Builds settings: build command `pnpm build`, deploy command `pnpm exec wrangler deploy`.
+Pushing to `main` deploys through Cloudflare Pages, with build command `pnpm build` and output directory `dist/client`. The API runs from `functions/`.
 
 ## Stack
 
-Vite, React, TypeScript, Tailwind, shadcn/ui, and a Hono API on Cloudflare Workers.
+Vite, React, TypeScript, Tailwind, shadcn/ui, and a Hono API on Cloudflare Pages.

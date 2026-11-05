@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2023"],
+    "lib": [
+      "ES2023"
+    ],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "strict": true,
@@ -9,8 +11,18 @@
     "noUnusedParameters": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "types": ["@cloudflare/workers-types"],
-    "paths": { "@shared/*": ["./shared/*"] }
+    "types": [
+      "@cloudflare/workers-types"
+    ],
+    "paths": {
+      "@shared/*": [
+        "./shared/*"
+      ]
+    }
   },
-  "include": ["worker", "shared"]
+  "include": [
+    "worker",
+    "functions",
+    "shared"
+  ]
 }
