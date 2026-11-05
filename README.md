@@ -9,7 +9,7 @@
   Live arrivals for any stop in Israel, in Hebrew and English.
 </p>
 
-<p><a href="https://tachana-live.pages.dev"><b>Open Tachana →</b></a></p>
+<p><a href="https://tachana.pages.dev"><b>Open Tachana →</b></a></p>
 
 <br>
 
