@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 type Sort = "line" | "time";
 
 const CODE_PATTERN = /^\d{1,6}$/;
+const AUTO_REFRESH_MS = 30000;
 const GEO_ERRORS: Record<number, StringKey> = { 1: "geoDenied", 2: "geoUnavailable", 3: "geoTimeout" };
 
 const store = {
@@ -93,7 +94,17 @@ export function App() {
   }, []);
 
   useEffect(() => {
-    if (code) void load(code);
+    if (!code) return;
+    void load(code);
+    const refreshIfVisible = () => {
+      if (document.visibilityState === "visible") void load(code);
+    };
+    const timer = setInterval(refreshIfVisible, AUTO_REFRESH_MS);
+    document.addEventListener("visibilitychange", refreshIfVisible);
+    return () => {
+      clearInterval(timer);
+      document.removeEventListener("visibilitychange", refreshIfVisible);
+    };
   }, [code, load]);
 
   const openStop = (stop: string) => {
